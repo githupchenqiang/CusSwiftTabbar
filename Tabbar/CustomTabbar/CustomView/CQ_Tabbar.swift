@@ -37,8 +37,8 @@ class CQ_Tabbar: UIView {
                 
                 //设置文字
                 BigButton.setTitle(tabbarItem.title, for: .normal)
-                BigButton.setTitleColor(.red, for: .normal)
-                BigButton.setTitleColor(.green, for: .selected)
+                BigButton.setTitleColor(UIColor.init(hexString: "#6B6B6B"), for: .normal)
+                BigButton.setTitleColor(UIColor.init(hexString: "#63B8FF"), for: .selected)
                 BigButton.addTarget(self, action: #selector(btnClick(btn:)), for: .touchDown)
                 addSubview(BigButton)
                 bigButton = BigButton
@@ -53,8 +53,8 @@ class CQ_Tabbar: UIView {
                 NorButton.setTitle(tabbarItem.title, for: .normal)
                 
 
-                NorButton.setTitleColor(.red, for: .normal)
-                NorButton.setTitleColor(.green, for: .selected)
+                NorButton.setTitleColor(UIColor.init(hexString: "#6B6B6B"), for: .normal)
+                NorButton.setTitleColor(UIColor.init(hexString: "#63B8FF"), for: .selected)
                 NorButton.addTarget(self, action: #selector(btnClick(btn:)), for: .touchDown)
                 addSubview(NorButton)
                 

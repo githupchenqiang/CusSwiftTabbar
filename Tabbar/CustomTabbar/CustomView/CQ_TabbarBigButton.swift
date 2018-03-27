@@ -21,7 +21,6 @@ class CQ_TabbarBigButton: UIButton {
         titleLabel?.textAlignment = NSTextAlignment.center
         imageView?.contentMode = UIViewContentMode.center
         
-        
         BgView = UIView()
         BgView?.backgroundColor = UIColor.init(patternImage: UIImage(named: "tab_Irregular")!)
         insertSubview(BgView!, at: 0)

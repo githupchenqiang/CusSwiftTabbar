@@ -15,17 +15,19 @@ class CQ_NavigationController: UINavigationController {
         let appearance = UINavigationBar.appearance()
         let att = NSMutableDictionary()
         att[NSFontAttributeName] = UIFont.systemFont(ofSize: 20)
-        att[NSForegroundColorAttributeName] = UIColor.white
+        att[NSForegroundColorAttributeName] = UIColor.yellow
         appearance.titleTextAttributes = att as? [String : Any]
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
         
         //设置导航条的背景
-//        appearance .setBackgroundImage(<#T##backgroundImage: UIImage?##UIImage?#>, for: <#T##UIBarMetrics#>)
+//        appearance .setBackgroundImage(UIImage.ima, for: .defaultPrompt)
         
+        navigationBar.barTintColor = UIColor.init(hexString: "#5CACEE")
+
         //设置文字
         appearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont(name:"Heiti SC" ,size:16)!]
-        navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.red
         PopDelegate = interactivePopGestureRecognizer?.delegate
         self.delegate = self
     }

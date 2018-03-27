@@ -29,10 +29,9 @@ class CQ_TabbarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addChildVC()
         setUpTabbar()
-    
     }
     
     func setUpTabbar() {
@@ -49,37 +48,29 @@ class CQ_TabbarController: UITabBarController {
         CustomTabbar = tabbar
     }
     
-    
-
     func setupButton(){
         let rect = self.tabBar.bounds
         let w = rect.size.width / CGFloat(self.childViewControllers.count - 1)
         composeButton?.frame = rect.insetBy(dx: 2 * w, dy: 0)
-        
         composeButton?.height = CGFloat(Int(TabbarHeight))
-     
     }
 
     func addChildVC(){
-       
         let homeVC = HomeViewController()
-        addChildVC(childVC: homeVC, title: "首页", imageName: "新闻组管理 (1)", selectedImage: "新闻组管理")
+        addChildVC(childVC: homeVC, title: "首页", imageName: "Home", selectedImage: "HomeSele")
         
         let NewVC = NewViewController()
-        addChildVC(childVC: NewVC, title: "新闻", imageName: "Push", selectedImage: "PushSele")
+        addChildVC(childVC: NewVC, title: "热点", imageName: "hot", selectedImage: "hotSele")
         
         let PushVC = PushViewController()
-//        addChildVC(childVC: PushVC, title: "大发", imageName: "tab_Irregular", selectedImage: "tabBar_icon_customer")
-        
         addChildVC(childVC: PushVC, title: "发布", imageName: "添加", selectedImage: "添加")
         
         let DataVC = DataViewController()
-        addChildVC(childVC: DataVC, title: "发现", imageName: "News", selectedImage: "NewsSele")
+        addChildVC(childVC: DataVC, title: "搜索", imageName: "Search", selectedImage: "SearchSele")
         
         let profile = ProfileViewController()
-        addChildVC(childVC: profile, title: "我的", imageName: "homepage_fill", selectedImage: "homepage_Sele")
+        addChildVC(childVC: profile, title: "我的", imageName: "User", selectedImage: "UserSele")
     }
-    
     
     func addChildVC(childVC:UIViewController,title:NSString,imageName:NSString,selectedImage:NSString){
         
@@ -101,7 +92,6 @@ class CQ_TabbarController: UITabBarController {
         self.addChildViewController(nav)
     }
     
-    
     lazy var items:NSMutableArray = {
        let array = NSMutableArray()
         return array
@@ -110,7 +100,6 @@ class CQ_TabbarController: UITabBarController {
 }
 
 extension CQ_TabbarController:CQTabbarDelegate,UITabBarControllerDelegate,UINavigationControllerDelegate{
-    
     func tabbarSelected(tabbar:CQ_Tabbar,clickIndex:NSInteger){
         super.selectedIndex = clickIndex
     }
@@ -129,7 +118,6 @@ extension CQ_TabbarController:CQTabbarDelegate,UITabBarControllerDelegate,UINavi
             Root.view.addSubview(CustomTabbar!)
         }
     }
-    
     
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
